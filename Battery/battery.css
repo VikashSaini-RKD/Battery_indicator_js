@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono";
+  }
+  .container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    /* border: 2px solid red; */
+  }
+  #battery {
+    box-sizing: content-box;
+    height: 7.8em;
+    width: 17.5em;
+    border: 0.6em solid #246aed;
+    margin: auto;
+    border-radius: 0.6em;
+    position: relative;
+    display: grid;
+    place-items: center;
+  }
+  #battery:before {
+    position: absolute;
+    content: "";
+    height: 5em;
+    width: 1.1em;
+    background-color: #246aed;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: -1.6em;
+    border-radius: 0 0.3em 0.3em 0;
+  }
+  #charge {
+    /* border: 2px solid rgb(255, 0, 93); */
+    position: absolute;
+    height: 7em;
+    width: 16.25em;
+    background-color: #24ed78;
+    top: 0.4em;
+    left: 0.6em;
+    border-radius: 3px;
+  }
+  #charge.down20{
+    background:lightpink;
+   
+  }
+  #charge.down15{
+    background: red;
+   
+  }
+  #charge-level {
+    position: absolute;
+    font-size: 3em;
+    font-weight: 600;
+  }
+  .battery_status {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 0.3em;
+  }
+
+  #charging-time {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 1em;
+  }
+  #charge.active {
+    animation: charge-animation 3s infinite linear;
+    background-color: rgb(43, 255, 0);
+  }
+   @keyframes charge-animation {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 16.25em;
+    }
+  } 
